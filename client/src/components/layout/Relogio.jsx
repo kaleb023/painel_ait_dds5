@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import styles from './Relogio.module.css';
 
 function Relogio(){
 
@@ -25,7 +26,7 @@ function Relogio(){
     const date = new Date().toLocaleTimeString();
     
     return(
-       <div>{hora}</div>
+       <div className={styles.relogio}>{hora}</div>
     )
         
 }
