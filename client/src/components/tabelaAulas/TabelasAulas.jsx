@@ -3,6 +3,7 @@ import AbreviaData from "./AbreviaData";
 import AbreviaInstrutor from "./AbreviaInstrutor";
 import AbreviaUc from "./AbreviaUc";
 import AbreviaAmbiente from "./AbreviaAmbiente";
+import styles from './TabelaAulas.module.css';
 
 function TabelasAulas() {
     const [aulas, setAulas] = useState([]);
@@ -30,8 +31,8 @@ function TabelasAulas() {
         }
     }
     return (
-        <div>
-            <table>
+        <div className={styles.aulas}>
+            <table className={styles.tabelaAulas}>
                 <thead>
                     <tr>
                      <th>Inicio</th>
