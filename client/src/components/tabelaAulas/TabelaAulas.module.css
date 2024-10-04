@@ -11,6 +11,10 @@
     border-collapse: collapse;
 }
 
+.edit{
+    width: 100%;
+}
+
 .tabelaAulas thead{
     background-color: #006bb4;
     color: #fff;
