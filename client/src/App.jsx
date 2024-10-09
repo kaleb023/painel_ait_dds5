@@ -19,6 +19,7 @@ function App() {
         <Route path='/importar_csv' element={<ImportarCSV/>} />
         <Route path='/cadastro_aula' element={<CadastroAula/>} />
         <Route path='/gestao_aula' element={<GestaoAula/>} />
+        <Route path='/gestao_aula/:tipo' element={<GestaoAula/>} />
         <Route path='/edit_aula/:id' element={<EditAula/>} />
       </Routes>
     </Router>
