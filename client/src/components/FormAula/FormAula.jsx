@@ -93,7 +93,7 @@ function FormAula({titulo,textoBotao, handleSubmit,id,tipo}) {
                     <input className='form-control' type="text" value={ambiente} onChange={(e) => (setAmbiente(e.target.value))} />
 
                     <a className='btn btn-danger mt-3 float-start' href="">Cancelar</a>
-                    <button className='btn btn-success mt-3 float-end' type='submite'>{textoBotao}</button>
+                    <button className='btn btn-success mt-3 float-end' type='submit'>{textoBotao}</button>
                 </form>
             </div>
         </>
