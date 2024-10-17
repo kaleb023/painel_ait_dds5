@@ -32,7 +32,7 @@ function CadastroAula() {
     return (
         <div>
             <Navbar/>
-            <FormAula titulo='Cadastrar aula' textoBotao='Cadastrar' handleSubmite={cadastrarAula}/>
+            <FormAula titulo='Cadastrar aula' textoBotao='Cadastrar' handleSubmit={cadastrarAula}/>
         </div>
     )
 }

@@ -4,6 +4,7 @@ import express from 'express';
 //importando cors
 import cors from 'cors';
 
+
 //Importando funcões (metodos do controller)
 import { mostrarAula,criarAula } from './controllers/AulaController.js';
 
@@ -14,6 +15,9 @@ const porta = 5000;
 
 //Habilitando cors
 app.use(cors());
+
+//habilidando json
+app.use(express.json());
 
 //rota padrao para teste de API
 app.get('/',(req,res)=>{
