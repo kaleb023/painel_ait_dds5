@@ -1,6 +1,8 @@
 //importando funções do AulaModel
 import { createAula } from "../models/AulaModel.js";
 import { bancoAula } from "../models/AulaModel.js";
+import { updateAula } from "../models/AulaModel.js";
+import { deleteAula } from "../models/AulaModel.js";
 
 export async function criarAula(req,res){
     //ao ser chaamdo o criarAula controller virá no console
@@ -33,9 +35,37 @@ export async function mostrarAula(req, res) {
         console.log(error);
         return[502,error];   
     }
+    
+}
+
+export async function atualizarAula(req,res){
+    console.log('AulaController atualizarAula')
+
+    const aula = req.body;
+    const {id} = req.params;
 
     
+    try {
+        const [status,resposta] = await updateAula(aula,id);
+        res.status(status).json(resposta); 
+    } catch (error) {
+        console.log(error);
+        res.status(500).json(error);
+    }
+}
 
+export async function excluirAula(req,res) {
+    console.log('AulaController excluirAula')
 
+    const {id} = req.params;
+
+    
+    try {
+        const [status,resposta] = await deleteAula(id);
+        res.status(status).json(resposta); 
+    } catch (error) {
+        console.log(error);
+        res.status(500).json(error);
+    }
     
 }

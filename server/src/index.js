@@ -6,7 +6,7 @@ import cors from 'cors';
 
 
 //Importando funcões (metodos do controller)
-import { mostrarAula,criarAula } from './controllers/AulaController.js';
+import { mostrarAula,criarAula,atualizarAula, excluirAula } from './controllers/AulaController.js';
 
 
 //chamando função express
@@ -27,6 +27,8 @@ app.get('/',(req,res)=>{
 //Rotas de aulas
 app.post('/aulas', criarAula);
 app.get('/aulas', mostrarAula);
+app.put('/aulas/:id', atualizarAula);
+app.delete('/aulas/:id', excluirAula);
 
 
 //Iniciando API e exibindo mensagem no console com a porta 
