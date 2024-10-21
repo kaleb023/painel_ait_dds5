@@ -112,7 +112,7 @@ export async function deleteAula(id) {
     const conexao = mysql.createPool(db);
     console.log('Deletando no Model aula');
 
-    const sql = `DELETE FROM aulas WHERE id= ?`;
+    const sql = `DELETE FROM aulas WHERE id = ?`;
 
     const params = [id];
 
@@ -125,5 +125,24 @@ export async function deleteAula(id) {
         return [500, error];
     }
 
+
+}
+
+export async function oneAula(id) {
+    const conexao = mysql.createPool(db);
+    console.log('Mostrando no Model aula');
+
+    const sql = `SELECT * FROM aulas WHERE id = ?`;
+
+    const params = [id];
+
+    try {
+        const [retorno] = await conexao.query(sql, params);
+        console.log('Monstrando aulas');
+        return [200, retorno[0]];
+    } catch (error) {
+        console.log(error);
+        return [502, error];
+    }
 
 }

@@ -1,7 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import FormatarData from './FormatarData';
 
 function FormAula({titulo,textoBotao, handleSubmit,id,tipo}) {
     const navigate =  useNavigate();
@@ -17,9 +18,9 @@ function FormAula({titulo,textoBotao, handleSubmit,id,tipo}) {
 
     useEffect(()=>{
         if(id){
-            console.log(id);
+           console.log(id);
            baixarAula(id);
-           setTimeout();
+           
         }
     },[]);
 
@@ -38,6 +39,7 @@ function FormAula({titulo,textoBotao, handleSubmit,id,tipo}) {
             }else{
                 const respostaJSON = await resposta.json();
                 console.log(respostaJSON);
+                //setDataAula(FormatarData(respostaJSON.data));
                 setTurma(respostaJSON.turma);
                 setInstrutor(respostaJSON.instrutor);
                 setUnidadeCurricular(respostaJSON.unidade_curricular);
